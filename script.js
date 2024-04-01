@@ -12,9 +12,14 @@ button.className = "btn btn-primary"
 button.innerHTML = "Display Data"
 button.addEventListener("click",displaydata)
 
-parentdiv.append(input_date,button)
 
-document.body.append(parentdiv)
+
+// Create a HTML element Dynamically
+var div = document.createElement("div");
+div.className = "main1"
+parentdiv.append(input_date,button,div)
+document.body.append(parentdiv,div)
+
 
 
 function displaydata(){
@@ -39,6 +44,12 @@ var yeardiff = currentdate.getFullYear() - inputdate.getFullYear()
 console.log(yeardiff);
 var monthdiff = (yeardiff*12)+(currentdate.getMonth()-inputdate.getMonth())
 console.log(monthdiff);
+div.innerHTML = `
+Millisec:${millisecdiff}
+SecondS: ${secdiff}
+`
+
+
 }
 else{
     // invalid date selected
