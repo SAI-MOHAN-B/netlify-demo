@@ -17,6 +17,7 @@ button.addEventListener("click",displaydata)
 // Create a HTML element Dynamically
 var div = document.createElement("div");
 div.className = "main1"
+div.innerHTML = ""
 parentdiv.append(input_date,button,div)
 document.body.append(parentdiv,div)
 
@@ -45,8 +46,8 @@ console.log(yeardiff);
 var monthdiff = (yeardiff*12)+(currentdate.getMonth()-inputdate.getMonth())
 console.log(monthdiff);
 div.innerHTML = `
-Millisec:${millisecdiff}
-SecondS: ${secdiff}
+Millisec:${millisecdiff} <br>
+SecondS: ${secdiff} <br>
 `
 
 
